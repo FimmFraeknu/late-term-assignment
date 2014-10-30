@@ -1,5 +1,13 @@
+import java.util.HashMap;
+import java.util.LinkedList;
+
 
 public class TicTacToe {
+	HashMap<RowVal, LinkedList<TicVal>> board;
+	
+	TicTacToe() {
+		
+	}
     //Athugar hvort allir retir séu teknir
 	public boolean BoardFull() {
 		return false;
