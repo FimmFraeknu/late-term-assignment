@@ -11,8 +11,15 @@ public class TicTacToeTests {
 	}
 	
 	@Test
+	public void ConstructorTest() {
+		TicTacToe testTacToe = new TicTacToe();
+		fail("Not yet implemented");
+	}
+	
+	@Test
 	public void BoardFullTest() {
 		TicTacToe testTacToe = new TicTacToe();
+		
 		fail("Not yet implemented");
 	}
 

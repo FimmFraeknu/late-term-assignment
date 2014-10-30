@@ -1,4 +1,4 @@
 
 public enum TicVal {
-	X, O
+	X, O, U
 }
