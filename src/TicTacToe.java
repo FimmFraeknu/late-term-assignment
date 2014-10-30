@@ -1,12 +1,16 @@
 import java.util.HashMap;
-import java.util.LinkedList;
 
 
 public class TicTacToe {
-	HashMap<RowVal, LinkedList<TicVal>> board;
+	private final int ROWS = 3;
+	HashMap<RowVal, TicVal[]> board;
 	
 	TicTacToe() {
-		board = new HashMap<RowVal, LinkedList<TicVal>>(3); //3 raðir..
+		board = new HashMap<RowVal, TicVal[]>(ROWS);
+		
+		for (RowVal row : RowVal.values()) {
+			board.put(row, new TicVal[3]);
+		}
 	}
     //Athugar hvort allir retir séu teknir
 	public boolean BoardFull() {
