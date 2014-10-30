@@ -6,7 +6,7 @@ public class TicTacToe {
 	HashMap<RowVal, LinkedList<TicVal>> board;
 	
 	TicTacToe() {
-		board = new HashMap<RowVal, LinkedList<TicVal>>(9); //9 reitir
+		board = new HashMap<RowVal, LinkedList<TicVal>>(3); //3 raðir..
 	}
     //Athugar hvort allir retir séu teknir
 	public boolean BoardFull() {
