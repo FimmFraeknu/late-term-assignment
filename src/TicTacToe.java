@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 
 public class TicTacToe {
-	private final int ROWS = 3;
+	private final int ROWS = 3, COLUMNS = 3;
 	HashMap<RowVal, TicVal[]> board;
 	
 	TicTacToe() {
@@ -11,6 +11,18 @@ public class TicTacToe {
 		for (RowVal row : RowVal.values()) {
 			board.put(row, new TicVal[3]);
 		}
+	}
+	
+	public TicVal[] GetColumns(RowVal row) {
+		return board.get(row);
+	}
+	
+	public int GetNumberOfRows() {
+		return ROWS;
+	}
+	
+	public int GetNumberOfColumns() {
+		return COLUMNS;
 	}
     //Athugar hvort allir retir séu teknir
 	public boolean BoardFull() {
