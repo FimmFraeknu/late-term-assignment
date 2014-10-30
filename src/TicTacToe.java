@@ -13,7 +13,7 @@ public class TicTacToe {
 		}
 	}
 	
-	public TicVal[] GetRows(RowVal row) {
+	public TicVal[] GetColumns(RowVal row) {
 		return board.get(row);
 	}
 	
