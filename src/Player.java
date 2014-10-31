@@ -1,10 +1,14 @@
 
 public abstract class Player {
-	private static TicVal symbol;
+	protected static TicVal symbol;
 	
-	public void insert() {
+	Player(TicVal symbol) {
+		this.symbol = symbol; 
+	}
+	
+	private void Insert() {
 		
 	}
 	
-	public abstract int getMove();
+	public abstract void getMove(TicTacToe tacToe);
 }
