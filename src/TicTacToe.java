@@ -98,12 +98,12 @@ public class TicTacToe {
 			for (int col = 0; col < COLUMNS; col++) {
 				TicVal valueInSquare = board.get(row)[col];
 				
-				if (valueInSquare == TicVal.U) continue; 
+				if (valueInSquare == TicVal.U) break; 
 				else {
 					if (currentPotentialVictor == TicVal.U) currentPotentialVictor = valueInSquare;
 					else {
 						if ((col == COLUMNS - 1) && valueInSquare == currentPotentialVictor) return currentPotentialVictor;
-						else if (valueInSquare != currentPotentialVictor) continue; 
+						else if (valueInSquare != currentPotentialVictor) break; 
 					}
 				}
 			}
