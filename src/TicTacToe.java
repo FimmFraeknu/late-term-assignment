@@ -40,6 +40,8 @@ public class TicTacToe {
 		return CheckDiagonalVictory(); 
 	}
 	
+	/* Check whether someone wins by having a diagonal line. 
+	 * Return null if no winner found. Otherwise the TicVal of the winner. */
 	private TicVal CheckDiagonalVictory() {
 		int diagonalVictoryAColumn = 0, diagonalVictoryBColumn = COLUMNS - 1;
 		boolean victoryAPossible = true, victoryBPossible = true; 
