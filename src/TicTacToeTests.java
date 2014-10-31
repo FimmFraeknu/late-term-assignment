@@ -1,9 +1,13 @@
 
 import static org.junit.Assert.*;
+
 import org.junit.*;
+import org.junit.rules.ExpectedException;
 
 public class TicTacToeTests {
-
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+	
 	@Test
 	public void test() {
 		fail("Not yet implemented");
@@ -48,5 +52,15 @@ public class TicTacToeTests {
 		
 		//Assure ourselves that the TicVal is still the original value. 
 		assertEquals(tacToe.GetColumns(RowVal.A)[0], TicVal.X);
+	}
+	
+	@Test 
+	public void ColumnOutOfBoundsTest()
+	{
+		thrown.expect(IndexOutOfBoundsException.class);
+		thrown.expectMessage("Column out of bounds.");
+		TicTacToe tacToe = new TicTacToe();
+		
+		tacToe.Insert(RowVal.A, -1, TicVal.X);
 	}
 }
