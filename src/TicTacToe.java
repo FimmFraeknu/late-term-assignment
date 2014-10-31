@@ -48,6 +48,8 @@ public class TicTacToe {
 	}
 	//Attempts to mark a square on the board, returns false if it's taken.
 	public boolean Insert(RowVal row, int col, TicVal symbol) {
+		ColOutOfBoundsCheck(col - 1); 
+		
 		if (!SquareIsTaken(row, col - 1)) {
 			TicVal[] values = board.get(row);
 			values[col - 1] = symbol;
@@ -56,5 +58,11 @@ public class TicTacToe {
 		}
 		
 		return false; 
+	}
+	
+	private void ColOutOfBoundsCheck(int col) {
+		if (col >= COLUMNS || col < 0) {
+			throw new IndexOutOfBoundsException("Column out of bounds.");
+		}
 	}
 }
