@@ -9,7 +9,13 @@ public class TicTacToe {
 		board = new HashMap<RowVal, TicVal[]>(ROWS);
 		
 		for (RowVal row : RowVal.values()) {
-			board.put(row, new TicVal[3]);
+			//Initialize TicVal columns
+			TicVal[] columns = new TicVal[COLUMNS];
+			for (int i = 0; i < COLUMNS; i++) {
+				columns[i] = TicVal.U;
+			}
+			
+			board.put(row, columns);
 		}
 	}
 	
