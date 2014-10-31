@@ -27,7 +27,7 @@ public class HumanPlayer extends Player{
 				System.out.println("Invalid row. Please try a different input.");
 			}
 			
-			System.out.println("The square " + input.charAt(0) + input.charAt(1) + " is taken. Try another.");
+			System.out.println("The square at " + input.charAt(0) + input.charAt(1) + " is taken. Try another.");
 	    }
 	}
 	
