@@ -1,7 +1,6 @@
+
 import static org.junit.Assert.*;
-
-import org.junit.Test;
-
+import org.junit.*;
 
 public class TicTacToeTests {
 
@@ -13,7 +12,13 @@ public class TicTacToeTests {
 	@Test
 	public void ConstructorTest() {
 		TicTacToe testTacToe = new TicTacToe();
-		fail("Not yet implemented");
+		for ( RowVal row : RowVal.values() ) {
+			TicVal[] cols = testTacToe.GetColumns(row);
+			for ( int j = 0; j < cols.length; ++j ) {
+				assertEquals(cols[j], 'U');
+			
+			}
+		}
 	}
 	
 	@Test

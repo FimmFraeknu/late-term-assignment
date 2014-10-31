@@ -1,5 +1,5 @@
 import java.util.HashMap;
-
+import org.junit.*;
 
 public class TicTacToe {
 	private final int ROWS = 3, COLUMNS = 3;
@@ -24,7 +24,7 @@ public class TicTacToe {
 	public int GetNumberOfColumns() {
 		return COLUMNS;
 	}
-    //Athugar hvort allir retir séu teknir
+    //Athugar hvort allir retir sï¿½u teknir
 	public boolean BoardFull() {
 		return false;
 	}
@@ -35,8 +35,8 @@ public class TicTacToe {
 	void DisplayBoard() {
 		
 	}
-	//Reynir að merkja reit fyrir þennan player.
+	//Reynir aï¿½ merkja reit fyrir ï¿½ennan player.
 	boolean ChooseBox(int Player, RowVal row, int col) { 
-		return false; //int Player verður væntanlega klasi, setti int svo compile-ist
+		return false; //int Player verï¿½ur vï¿½ntanlega klasi, setti int svo compile-ist
 	}
 }
