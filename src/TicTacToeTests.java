@@ -91,4 +91,19 @@ public class TicTacToeTests {
 		
 		assertEquals(tacToe.GetWinner(), null);
 	}
+	
+	@Test
+	public void GetHorizontalWinnerTest() {
+		TicTacToe tacToe = new TicTacToe();
+		
+		tacToe.Insert(RowVal.A, 1, TicVal.X);
+		tacToe.Insert(RowVal.A, 2, TicVal.X);
+		tacToe.Insert(RowVal.A, 3, TicVal.X);
+		
+		tacToe.Insert(RowVal.B, 1, TicVal.O);
+		tacToe.Insert(RowVal.B, 2, TicVal.O);
+		tacToe.Insert(RowVal.C, 3, TicVal.O);
+		
+		assertEquals(tacToe.GetWinner(), TicVal.X);
+	}
 }

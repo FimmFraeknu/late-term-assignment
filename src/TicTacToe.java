@@ -37,9 +37,8 @@ public class TicTacToe {
 	}
 	
 	public TicVal GetWinner() {
-		return CheckDiagonalVictory(); 
+		return CheckDiagonalVictory();
 	}
-	
 	/* Check whether someone wins by having a diagonal line. 
 	 * Return null if no winner found. Otherwise the TicVal of the winner. */
 	private TicVal CheckDiagonalVictory() {
