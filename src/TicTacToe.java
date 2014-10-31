@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import org.junit.*;
 
 public class TicTacToe {
 	private final int ROWS = 3, COLUMNS = 3;
