@@ -106,4 +106,15 @@ public class TicTacToeTests {
 		
 		assertEquals(TicVal.X, tacToe.GetWinner());
 	}
+	
+	@Test
+	public void GetVerticalWinnerTest() {
+		TicTacToe tacToe = new TicTacToe();
+		
+		tacToe.Insert(RowVal.A, 1, TicVal.X);
+		tacToe.Insert(RowVal.B, 1, TicVal.X);
+		tacToe.Insert(RowVal.C, 1, TicVal.X);
+		
+		assertEquals(TicVal.X, tacToe.GetWinner());
+	}
 }

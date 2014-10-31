@@ -110,6 +110,7 @@ public class TicTacToe {
 		
 		return null; 
 	}
+	
 	private boolean SquareIsTaken(RowVal row, int col) {
 		return (board.get(row)[col] != TicVal.U);
 	}
