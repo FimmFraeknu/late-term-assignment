@@ -32,8 +32,7 @@ public class HumanPlayer extends Player{
 			
 			System.out.println("The square at " + input.charAt(0) + input.charAt(1) + " is taken. Try another.");
 	    }
-	}
-	
+	}	
 	public boolean IsInvalidRow(char rowValue) {
 		for (RowVal row : RowVal.values()) {
 			if (row.toString().charAt(0) == rowValue) return false; //rowValue er í RowVal.. fínt.
