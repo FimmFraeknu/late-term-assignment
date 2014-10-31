@@ -41,7 +41,7 @@ public class TicTacToeTests {
 		TicTacToe tacToe = new TicTacToe();
 		
 		tacToe.Insert(RowVal.A, 1, TicVal.X);
-		assertEquals(tacToe.GetColumns(RowVal.A)[0], TicVal.X);
+		assertEquals(TicVal.X, tacToe.GetColumns(RowVal.A)[0]);
 	}
 	
 	@Test
@@ -55,7 +55,7 @@ public class TicTacToeTests {
 		tacToe.Insert(RowVal.A, 1, TicVal.O);
 		
 		//Assure ourselves that the TicVal is still the original value. 
-		assertEquals(tacToe.GetColumns(RowVal.A)[0], TicVal.X);
+		assertEquals(TicVal.X, tacToe.GetColumns(RowVal.A)[0]);
 	}
 	
 	@Test 
@@ -80,7 +80,7 @@ public class TicTacToeTests {
 		tacToe.Insert(RowVal.A, 2, TicVal.O);
 		tacToe.Insert(RowVal.A, 3, TicVal.O);
 		
-		assertEquals(tacToe.GetWinner(), TicVal.X);
+		assertEquals(TicVal.X, tacToe.GetWinner());
 	}
 	
 	@Test
@@ -89,7 +89,7 @@ public class TicTacToeTests {
 		
 		tacToe.Insert(RowVal.B, 1, TicVal.X);
 		
-		assertEquals(tacToe.GetWinner(), null);
+		assertEquals(null, tacToe.GetWinner());
 	}
 	
 	@Test
@@ -104,6 +104,6 @@ public class TicTacToeTests {
 		tacToe.Insert(RowVal.B, 2, TicVal.O);
 		tacToe.Insert(RowVal.C, 3, TicVal.O);
 		
-		assertEquals(tacToe.GetWinner(), TicVal.X);
+		assertEquals(TicVal.X, tacToe.GetWinner());
 	}
 }
