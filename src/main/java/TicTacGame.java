@@ -1,3 +1,4 @@
+package main.java;
 
 public class TicTacGame {
    private TicTacToe board;
@@ -41,7 +42,7 @@ public class TicTacGame {
 		   if (game.GameOver()) break;
 	   }
 	   
-	   //Athugum hver ástæðan var fyrir GameOver.. draw eða winner..
+	   //Athugum hver ï¿½stï¿½ï¿½an var fyrir GameOver.. draw eï¿½a winner..
 	   TicVal winner = game.GetWinner();
 	   if (winner == TicVal.X) {
 		   System.out.println("Congratulations PlayerX, you win!");

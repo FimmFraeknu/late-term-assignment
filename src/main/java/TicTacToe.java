@@ -1,3 +1,4 @@
+package main.java;
 import java.util.HashMap;
 
 public class TicTacToe {
@@ -5,7 +6,7 @@ public class TicTacToe {
 	private int count; //Number of squares filled 
 	HashMap<RowVal, TicVal[]> board;
 	
-	TicTacToe() {
+	public TicTacToe() {
 		board = new HashMap<RowVal, TicVal[]>(ROWS);
 		
 		for (RowVal row : RowVal.values()) {

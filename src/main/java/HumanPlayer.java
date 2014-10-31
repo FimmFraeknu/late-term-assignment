@@ -1,3 +1,4 @@
+package main.java;
 import java.util.Scanner;
 
 
@@ -10,9 +11,9 @@ public class HumanPlayer extends Player{
 	    @SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		
-	    //Þegar við setjum inn í TicTacToe, getur verið að column sé out of bounds (checked)
-  		//Eða að reitur sé fullur, ef fullur viljum við nýtt input
-  		//Athugum fyrst hvort row sé valid:
+	    //ï¿½egar viï¿½ setjum inn ï¿½ TicTacToe, getur veriï¿½ aï¿½ column sï¿½ out of bounds (checked)
+  		//Eï¿½a aï¿½ reitur sï¿½ fullur, ef fullur viljum viï¿½ nï¿½tt input
+  		//Athugum fyrst hvort row sï¿½ valid:
 	    String input = null; 
 	    
 	    while (true) {
@@ -43,7 +44,7 @@ public class HumanPlayer extends Player{
 				
 				if (!IsInvalidRow(input.charAt(0))) {
 					if (tacToe.Insert(row, col, symbol)) {
-						return; //Ef þetta var successful, viljum við hætta, annars höldum við áfram að biðja um input.
+						return; //Ef ï¿½etta var successful, viljum viï¿½ hï¿½tta, annars hï¿½ldum viï¿½ ï¿½fram aï¿½ biï¿½ja um input.
 					}
 					
 					else {
@@ -64,7 +65,7 @@ public class HumanPlayer extends Player{
 	
 	private boolean IsInvalidRow(char rowValue) {
 		for (RowVal row : RowVal.values()) {
-			if (row.toString().charAt(0) == rowValue) return false; //rowValue er í RowVal.. fínt.
+			if (row.toString().charAt(0) == rowValue) return false; //rowValue er ï¿½ RowVal.. fï¿½nt.
 		}
 		
 		return true; 

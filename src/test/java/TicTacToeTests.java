@@ -1,5 +1,9 @@
+package test.java;
 
 import static org.junit.Assert.*;
+import main.java.RowVal;
+import main.java.TicTacToe;
+import main.java.TicVal;
 
 import org.junit.*;
 import org.junit.rules.ExpectedException;
