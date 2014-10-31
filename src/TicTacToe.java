@@ -2,6 +2,7 @@ import java.util.HashMap;
 
 public class TicTacToe {
 	private final int ROWS = 3, COLUMNS = 3;
+	private int count; //Number of squares filled 
 	HashMap<RowVal, TicVal[]> board;
 	
 	TicTacToe() {
@@ -38,8 +39,8 @@ public class TicTacToe {
 		return false;
 	}
 	
-	private boolean SquareIsTaken() {
-		return false;
+	private boolean SquareIsTaken(RowVal row, int col) {
+		return (board.get(row)[col] != TicVal.U);
 	}
 	
 	void DisplayBoard() {
@@ -47,6 +48,13 @@ public class TicTacToe {
 	}
 	//Attempts to mark a square on the board, returns false if it's taken.
 	public boolean Insert(RowVal row, int col, TicVal symbol) {
+		if (!SquareIsTaken(row, col - 1)) {
+			TicVal[] values = board.get(row);
+			values[col - 1] = symbol;
+			count++; 
+			return true; 
+		}
+		
 		return false; 
 	}
 }
