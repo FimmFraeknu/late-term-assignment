@@ -9,11 +9,6 @@ public class TicTacToeTests {
 	public ExpectedException thrown = ExpectedException.none();
 	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
 	public void ConstructorTest() {
 		TicTacToe testTacToe = new TicTacToe();
 		for ( RowVal row : RowVal.values() ) {
@@ -28,8 +23,17 @@ public class TicTacToeTests {
 	@Test
 	public void BoardFullTest() {
 		TicTacToe testTacToe = new TicTacToe();
+		/*
+		 * We fill up the board with O's.
+		 */
+		for(RowVal row : RowVal.values()) {
+			TicVal[] cols = testTacToe.GetColumns(row);
+			for(int j = 1; j <= cols.length; j++) {
+				testTacToe.Insert(row, j, TicVal.O);
+			}
+		}
 		
-		fail("Not yet implemented");
+		assertTrue(testTacToe.BoardFull());
 	}
 	
 	@Test
