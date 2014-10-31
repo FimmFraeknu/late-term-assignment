@@ -92,7 +92,6 @@ public class TicTacToe {
 	
 	private TicVal CheckHorizontalVictory() {
 		TicVal currentPotentialVictor = TicVal.U;
-		System.out.println("**Checking Horizontal Victory**");
 		for (RowVal row : RowVal.values()) {
 			currentPotentialVictor = TicVal.U;
 			for (int col = 0; col < COLUMNS; col++) {
