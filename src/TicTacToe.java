@@ -32,7 +32,7 @@ public class TicTacToe {
 	}
     //Athugar hvort allir retir s�u teknir
 	public boolean BoardFull() {
-		return false;
+		return count == (ROWS * COLUMNS);
 	}
 	//Allir reitir teknir/leikur unninn
 	public boolean GameOver() {
