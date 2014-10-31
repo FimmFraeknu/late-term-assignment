@@ -18,7 +18,7 @@ public class HumanPlayer extends Player{
 		    input = s.nextLine();
 			
 			if (!IsInvalidRow(input.charAt(0))) {
-				if (tacToe.Insert(RowVal.valueOf(String.valueOf(input.charAt(0))), (int)input.charAt(1), symbol)) {
+				if (tacToe.Insert(RowVal.valueOf(String.valueOf(input.charAt(0))), Character.getNumericValue(input.charAt(1)), symbol)) {
 					return; //Ef þetta var successful, viljum við hætta, annars höldum við áfram að biðja um input.
 				}
 			}
