@@ -37,6 +37,11 @@ public class TicTacToe {
 	public boolean GameOver() {
 		return false;
 	}
+	
+	private boolean SquareIsTaken() {
+		return false;
+	}
+	
 	void DisplayBoard() {
 		
 	}
