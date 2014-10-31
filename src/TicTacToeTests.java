@@ -93,6 +93,59 @@ public class TicTacToeTests {
 	}
 	
 	@Test
+	public void CheckDiagonalLoserTest() {
+		TicTacToe tacToe = new TicTacToe();
+		
+
+		tacToe.Insert(RowVal.A, 1, TicVal.O);
+		tacToe.Insert(RowVal.B, 2, TicVal.X);
+		tacToe.Insert(RowVal.C, 3, TicVal.X);
+		
+		assertEquals(null, tacToe.GetWinner());
+	}
+
+	@Test 
+	public void CheckHorizontalLoserTest() {
+		TicTacToe tacToe = new TicTacToe();
+
+		tacToe.Insert(RowVal.A, 1, TicVal.X);
+		tacToe.Insert(RowVal.A, 2, TicVal.X);
+		tacToe.Insert(RowVal.A, 3, TicVal.O);
+
+
+		assertEquals(null, tacToe.GetWinner());
+	}
+
+	@Test 
+	public void CheckVerticalLoserTest(){
+		TicTacToe tacToe = new TicTacToe();
+
+		tacToe.Insert(RowVal.A, 1, TicVal.X);
+		tacToe.Insert(RowVal.B, 1, TicVal.X);
+		tacToe.Insert(RowVal.C, 1, TicVal.O);
+
+
+		assertEquals(null, tacToe.GetWinner());
+	}
+	
+	
+	@Test
+	public void CheckVerticalLoser2Test(){
+		TicTacToe tacToe = new TicTacToe();
+		
+		tacToe.Insert(RowVal.A, 1, TicVal.X);
+		tacToe.Insert(RowVal.B, 1, TicVal.X);
+		tacToe.Insert(RowVal.C, 1, TicVal.O);
+		tacToe.Insert(RowVal.A, 3, TicVal.X);
+		tacToe.Insert(RowVal.B, 3, TicVal.X);
+		tacToe.Insert(RowVal.C, 3, TicVal.O);
+		
+		assertEquals(null, tacToe.GetWinner());
+	}
+	
+	
+	
+	@Test
 	public void GetHorizontalWinnerTest() {
 		TicTacToe tacToe = new TicTacToe();
 		
@@ -103,6 +156,7 @@ public class TicTacToeTests {
 		tacToe.Insert(RowVal.B, 1, TicVal.O);
 		tacToe.Insert(RowVal.B, 2, TicVal.O);
 		tacToe.Insert(RowVal.C, 3, TicVal.O);
+		
 		
 		assertEquals(TicVal.X, tacToe.GetWinner());
 	}

@@ -1,6 +1,6 @@
 
 public abstract class Player {
-	protected static TicVal symbol;
+	protected TicVal symbol;
 	
 	Player(TicVal symbol) {
 		this.symbol = symbol; 
