@@ -7,7 +7,8 @@ public class HumanPlayer extends Player{
 	}
 	public void getMove(TicTacToe tacToe) {
 		System.out.println("Player " + symbol + " choose your square. (Format examples: A1, B2, C3..)");
-	    Scanner s = new Scanner(System.in);
+	    @SuppressWarnings("resource")
+		Scanner s = new Scanner(System.in);
 		
 	    //Þegar við setjum inn í TicTacToe, getur verið að column sé out of bounds (checked)
   		//Eða að reitur sé fullur, ef fullur viljum við nýtt input
