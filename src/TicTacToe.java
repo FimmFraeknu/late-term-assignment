@@ -30,13 +30,14 @@ public class TicTacToe {
 	public int GetNumberOfColumns() {
 		return COLUMNS;
 	}
-    //Athugar hvort allir retir s�u teknir
+    
+	//Checks whether all squares are taken 
 	public boolean BoardFull() {
 		return count == (ROWS * COLUMNS);
 	}
-	//Allir reitir teknir/leikur unninn
-	public boolean GameOver() {
-		return false;
+	
+	public TicVal GetWinner() {
+		return null; 
 	}
 	
 	private boolean SquareIsTaken(RowVal row, int col) {

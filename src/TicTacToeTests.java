@@ -67,4 +67,19 @@ public class TicTacToeTests {
 		
 		tacToe.Insert(RowVal.A, -1, TicVal.X);
 	}
+	
+	@Test
+	public void GetWinnerTest() {
+		TicTacToe tacToe = new TicTacToe();
+		
+		//X er winner..
+		tacToe.Insert(RowVal.A, 1, TicVal.X);
+		tacToe.Insert(RowVal.B, 2, TicVal.X);
+		tacToe.Insert(RowVal.C, 3, TicVal.X);
+		
+		tacToe.Insert(RowVal.A, 2, TicVal.O);
+		tacToe.Insert(RowVal.A, 3, TicVal.O);
+		
+		assertEquals(tacToe.GetWinner(), TicVal.X);
+	}
 }
