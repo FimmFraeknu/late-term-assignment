@@ -72,6 +72,8 @@ public class TicTacToeTests {
 		tacToe.Insert(RowVal.A, -1, TicVal.X);
 	}
 	
+	//Check if GetWinner function declares a correct winner when
+	//X has a winning condition on a diagonal row.
 	@Test
 	public void GetDiagonalWinnerTest() {
 		TicTacToe tacToe = new TicTacToe();
@@ -87,8 +89,10 @@ public class TicTacToeTests {
 		assertEquals(TicVal.X, tacToe.GetWinner());
 	}
 	
+	// Check if GetWinner function returns no winner if there are 
+	// no winning conditions.
 	@Test
-	public void GetDiagonalLoserTest() {
+	public void GetLoserTest() {
 		TicTacToe tacToe = new TicTacToe();
 		
 		tacToe.Insert(RowVal.B, 1, TicVal.X);
@@ -96,6 +100,8 @@ public class TicTacToeTests {
 		assertEquals(null, tacToe.GetWinner());
 	}
 	
+	// Testing GetWinner function for input of one diagonal row where there are no
+	// winning conditions.
 	@Test
 	public void CheckDiagonalLoserTest() {
 		TicTacToe tacToe = new TicTacToe();
@@ -108,6 +114,8 @@ public class TicTacToeTests {
 		assertEquals(null, tacToe.GetWinner());
 	}
 
+	// Testing GetWinner function for input of one row where there are no
+	// winning conditions.
 	@Test 
 	public void CheckHorizontalLoserTest() {
 		TicTacToe tacToe = new TicTacToe();
@@ -119,7 +127,9 @@ public class TicTacToeTests {
 
 		assertEquals(null, tacToe.GetWinner());
 	}
-
+	
+	// Testing GetWinner function for input of one Column where there are no
+	// winning conditions.
 	@Test 
 	public void CheckVerticalLoserTest(){
 		TicTacToe tacToe = new TicTacToe();
@@ -132,9 +142,9 @@ public class TicTacToeTests {
 		assertEquals(null, tacToe.GetWinner());
 	}
 	
-	
+	// Testing GetWinner function for input of multipleRows
 	@Test
-	public void CheckVerticalLoser2Test(){
+	public void CheckMultipleRowsLoserTest(){
 		TicTacToe tacToe = new TicTacToe();
 		
 		tacToe.Insert(RowVal.A, 1, TicVal.X);
