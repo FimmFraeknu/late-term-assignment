@@ -45,8 +45,8 @@ public class TicTacToe {
 	void DisplayBoard() {
 		
 	}
-	//Reynir a� merkja reit fyrir �ennan player.
+	//Attempts to mark a square on the board, returns false if it's taken.
 	public boolean Insert(RowVal row, int col, TicVal symbol) {
-		return false; //int Player ver�ur v�ntanlega klasi, setti int svo compile-ist
+		return false; 
 	}
 }

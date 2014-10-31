@@ -27,5 +27,13 @@ public class TicTacToeTests {
 		
 		fail("Not yet implemented");
 	}
+	
+	@Test
+	public void InsertTest() {
+		TicTacToe tacToe = new TicTacToe();
+		
+		tacToe.Insert(RowVal.A, 1, TicVal.X);
+		assertEquals(tacToe.GetColumns(RowVal.A)[0], TicVal.X);
+	}
 
 }
