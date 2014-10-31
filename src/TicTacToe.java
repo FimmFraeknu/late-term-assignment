@@ -139,6 +139,29 @@ public class TicTacToe {
 	
 	void DisplayBoard() {
 		
+		/*
+		 * Print header.
+		 */
+		System.out.print("    ");
+		for(int i = 0; i < COLUMNS; i++) {
+			System.out.print("  " + i + "   ");
+		}System.out.println();
+		
+		/*
+		 * Print values for each cell.
+		 */
+		for(RowVal row : RowVal.values()) {
+			System.out.print(row + "  ");
+			TicVal[] cols = this.GetColumns(row);
+			for(int j = 0; j < cols.length; j++) {
+				System.out.print("|__");
+				if(cols[j] != TicVal.U)
+					System.out.print(cols[j]);
+				else
+					System.out.print("_");
+				System.out.print("__");
+			} System.out.println("|");
+		}
 	}
 	//Attempts to mark a square on the board, returns false if it's taken.
 	public boolean Insert(RowVal row, int col, TicVal symbol) {
