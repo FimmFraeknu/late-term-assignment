@@ -39,8 +39,9 @@ public class TicTacToe {
 	public TicVal GetWinner() {
 		TicVal value = CheckDiagonalVictory();
 		if (value != null) return value;
-		
-		return CheckHorizontalVictory(); 
+		value = CheckHorizontalVictory();
+		if (value != null) return value;
+		return CheckVerticalVictory(); 
 	}
 	/* Check whether someone wins by having a diagonal line. 
 	 * Return null if no winner found. Otherwise the TicVal of the winner. */
@@ -103,6 +104,27 @@ public class TicTacToe {
 					else {
 						if ((col == COLUMNS - 1) && valueInSquare == currentPotentialVictor) return currentPotentialVictor;
 						else if (valueInSquare != currentPotentialVictor) continue; 
+					}
+				}
+			}
+		}
+		
+		return null; 
+	}
+	
+	private TicVal CheckVerticalVictory() {
+		TicVal currentPotentialVictor = TicVal.U;
+		
+		for (int col = 0; col < COLUMNS; col++) {
+			for (RowVal row : RowVal.values()) {
+				TicVal valueInSquare = board.get(row)[col];
+				
+				if (valueInSquare == TicVal.U) break; 
+				else {
+					if (currentPotentialVictor == TicVal.U) currentPotentialVictor = valueInSquare;
+					else {
+						if ((row == RowVal.values()[RowVal.values().length - 1]) && valueInSquare == currentPotentialVictor) return currentPotentialVictor;
+						else if (valueInSquare != currentPotentialVictor) break; 
 					}
 				}
 			}
