@@ -37,7 +37,52 @@ public class TicTacToe {
 	}
 	
 	public TicVal GetWinner() {
-		return null; 
+		return CheckDiagonalVictory(); 
+	}
+	
+	private TicVal CheckDiagonalVictory() {
+		int diagonalVictoryAColumn = 0, diagonalVictoryBColumn = COLUMNS - 1;
+		boolean victoryAPossible = true, victoryBPossible = true; 
+		TicVal potentialVictorA = TicVal.U, potentialVictorB = TicVal.U;
+		
+		//Victory A is the diagonal line from A1 to .. the last row/last column.
+		//Victory B is the diagonal line from the last row/1 to A/last column. 
+		
+		for (RowVal row : RowVal.values()) {
+			TicVal[] values = board.get(row);
+			//Case: If square has the value U (untaken), then victory is not possible for that row.
+			if (victoryAPossible) {
+				TicVal valueInSquare = values[diagonalVictoryAColumn];
+				if (valueInSquare == TicVal.U) victoryAPossible = false;
+				else {
+					if (potentialVictorA == TicVal.U) potentialVictorA = valueInSquare;
+					else {
+						//Check whether this is the same guy as in the last square
+						if (potentialVictorA != valueInSquare) victoryAPossible = false;
+					}
+					
+					diagonalVictoryAColumn++;
+				}
+			}
+			
+			if (victoryBPossible) {
+				TicVal valueInSquare = values[diagonalVictoryBColumn];
+				if (valueInSquare == TicVal.U) victoryBPossible = false;
+				else {
+					if (potentialVictorB == TicVal.U) potentialVictorB = valueInSquare;
+					else {
+						//Check whether this is the same guy as in the last square
+						if (potentialVictorB != valueInSquare) victoryBPossible = false;
+					}
+					
+					diagonalVictoryBColumn--;
+				}
+			}
+		}
+		
+		if (victoryAPossible) return potentialVictorA;
+		else if (victoryBPossible) return potentialVictorB;
+		else return null; 
 	}
 	
 	private boolean SquareIsTaken(RowVal row, int col) {
