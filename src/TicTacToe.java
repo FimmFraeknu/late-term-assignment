@@ -41,7 +41,7 @@ public class TicTacToe {
 		
 	}
 	//Reynir a� merkja reit fyrir �ennan player.
-	boolean ChooseBox(int Player, RowVal row, int col) { 
+	boolean Insert(int Player, RowVal row, int col) { 
 		return false; //int Player ver�ur v�ntanlega klasi, setti int svo compile-ist
 	}
 }
