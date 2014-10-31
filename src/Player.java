@@ -6,9 +6,5 @@ public abstract class Player {
 		this.symbol = symbol; 
 	}
 	
-	private void Insert() {
-		
-	}
-	
 	public abstract void getMove(TicTacToe tacToe);
 }
