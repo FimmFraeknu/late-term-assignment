@@ -17,24 +17,52 @@ public class HumanPlayer extends Player{
 	    
 	    while (true) {
 		    input = s.nextLine();
-			RowVal row = RowVal.valueOf(String.valueOf(input.charAt(0)));
-		    int col = Character.getNumericValue(input.charAt(1));
+		    int col = -1;
+		    RowVal row = null;
+		    
+		    try {
+		    	row = RowVal.valueOf(String.valueOf(input.charAt(0)));
+		    }
+		    
+		    catch (Exception ex) {
+		    	System.out.println("Invalid row. Please try again:");
+		    	continue;
+		    }
 			
-			if (!IsInvalidRow(input.charAt(0))) {
-				if (tacToe.Insert(row, col, symbol)) {
-					return; //Ef þetta var successful, viljum við hætta, annars höldum við áfram að biðja um input.
+			try {
+				col = Character.getNumericValue(input.charAt(1));
+			}
+			
+			catch (Exception ex) {
+				System.out.println("Invalid column. Please try again:");
+				continue;
+			}
+			
+			
+			try {
+				
+				if (!IsInvalidRow(input.charAt(0))) {
+					if (tacToe.Insert(row, col, symbol)) {
+						return; //Ef þetta var successful, viljum við hætta, annars höldum við áfram að biðja um input.
+					}
+					
+					else {
+						System.out.println("The square at " + input.charAt(0) + input.charAt(1) + " is taken. Try another.");
+					}
+				}
+				
+				else {
+					System.out.println("Invalid row. Please try a different input.");
 				}
 			}
 			
-			else {
-				System.out.println("Invalid row. Please try a different input.");
+			catch (IndexOutOfBoundsException ex) {
+				System.out.println(ex.getMessage() + " Please try again:");
 			}
-			
-			System.out.println("The square at " + input.charAt(0) + input.charAt(1) + " is taken. Try another.");
 	    }
 	}
 	
-	public boolean IsInvalidRow(char rowValue) {
+	private boolean IsInvalidRow(char rowValue) {
 		for (RowVal row : RowVal.values()) {
 			if (row.toString().charAt(0) == rowValue) return false; //rowValue er í RowVal.. fínt.
 		}
