@@ -15,7 +15,7 @@ public class TicTacToeTests {
 		for ( RowVal row : RowVal.values() ) {
 			TicVal[] cols = testTacToe.GetColumns(row);
 			for ( int j = 0; j < cols.length; ++j ) {
-				assertEquals(cols[j], 'U');
+				assertEquals('U', cols[j]);
 			
 			}
 		}
