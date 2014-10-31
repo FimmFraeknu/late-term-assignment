@@ -144,6 +144,29 @@ public class TicTacToeTests {
 	}
 	
 	
+	@Test
+	public void CheckVerticalMiddleLine(){
+		TicTacToe tacToe = new TicTacToe();
+		
+		tacToe.Insert(RowVal.A, 2, TicVal.X);
+		tacToe.Insert(RowVal.B, 2, TicVal.O);
+		tacToe.Insert(RowVal.C, 2, TicVal.X);
+		
+		assertEquals(null, tacToe.GetWinner());
+	}
+	
+	@Test
+	public void CheckVerticalMiddleLineV2(){
+		TicTacToe tacToe = new TicTacToe();
+		
+		tacToe.Insert(RowVal.B, 1, TicVal.X);
+		tacToe.Insert(RowVal.A, 1, TicVal.O);
+		tacToe.Insert(RowVal.B, 2, TicVal.X);
+		tacToe.Insert(RowVal.A, 2, TicVal.O);
+		tacToe.Insert(RowVal.B, 3, TicVal.X);
+		
+		assertEquals(TicVal.X, tacToe.GetWinner());
+	}
 	
 	@Test
 	public void GetHorizontalWinnerTest() {
