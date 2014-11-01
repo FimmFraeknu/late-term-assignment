@@ -1,0 +1,21 @@
+#/bin/bash
+# Generate javadocs and push to Github's gh-pages branch
+
+./gradlew clean
+./gradlew javadoc
+
+git branch tempdoc
+git checkout tempdoc
+
+mv build/docs ./
+rm -rf bin/
+rm -rf build/
+rm -rf gradle/
+rm -rf src/
+rm -rf config/
+rm *
+git add .
+git commit -m "Built javadoc for github for build on $(date)"
+git push gh-pages
+git checkout development
+git branch -d tempdoc
