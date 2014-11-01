@@ -1,0 +1,11 @@
+#/bin/bash
+
+git branch tempdoc
+git checkout tempdoc
+
+mv build/docs ./
+rm -rf bin/
+rm -rf build/
+rm -rf gradle/
+rm -rf src/
+rm *

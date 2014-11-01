@@ -1,0 +1,12 @@
+-classpath '/home/anton/git/late-term-assignment/build/classes/main:/home/anton/git/late-term-assignment/build/resources/main:/home/anton/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.5/6b262da268f8ad9eff941b25503a9198f0a0ac93/slf4j-api-1.7.5.jar'
+-d '/home/anton/git/late-term-assignment/build/docs/javadoc'
+-doctitle 'late-term-assignment API'
+-quiet 
+-windowtitle 'late-term-assignment API'
+'/home/anton/git/late-term-assignment/src/main/java/HumanPlayer.java'
+'/home/anton/git/late-term-assignment/src/main/java/TicTacToe.java'
+'/home/anton/git/late-term-assignment/src/main/java/Library.java'
+'/home/anton/git/late-term-assignment/src/main/java/Player.java'
+'/home/anton/git/late-term-assignment/src/main/java/TicTacGame.java'
+'/home/anton/git/late-term-assignment/src/main/java/TicVal.java'
+'/home/anton/git/late-term-assignment/src/main/java/RowVal.java'
