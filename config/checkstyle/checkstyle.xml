@@ -10,16 +10,19 @@
      <!-- Make sure methods start with a capital letter -->
      <module name="MethodName">
         <property name="format" value="^[A-Z].*" />
+        <property name="severity" value="warning" />
      </module>
  
      <!-- All constants in all caps -->
      <module name="ConstantName">
         <property name="format" value="^[A-Z]*" />
+        <property name="severity" value="warning" />
      </module>
 
      <!-- Non-static fields start with a lowercase letter -->
      <module name="MemberName">
         <property name="format" value="^[a-z].*" />
+        <property name="severity" value="warning" />
      </module>
   </module>
 </module>
