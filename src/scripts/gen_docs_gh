@@ -4,9 +4,23 @@
 ./gradlew clean
 ./gradlew javadoc
 
+git branch -d gh-pages
+git branch gh-pages
 git checkout gh-pages
 
+mv build/doc/javadoc ./
+rm -rf build/
+rm -rf config/
+rm -rf bin/
+rm -rf gradle/
+rm -rf src/
+rm -rf .gradle
+rm .project
+rm .classpath
+rm *
+mv javadoc/* ./
+rm -rf javadoc
 git add build/docs/*
 git commit -m "Built javadoc for github for build on $(date)"
-git push 
+git push origin gh-pages 
 git checkout development
