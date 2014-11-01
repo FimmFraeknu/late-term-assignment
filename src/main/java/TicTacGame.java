@@ -12,7 +12,7 @@ public class TicTacGame {
    }
    
    public void GetMove(Player player) {
-	   player.getMove(board);
+	   player.GetMove(board);
    }
    
    public TicVal GetWinner() {

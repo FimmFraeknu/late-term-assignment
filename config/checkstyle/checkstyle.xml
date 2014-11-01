@@ -20,7 +20,7 @@
      </module>
 
      <!-- Non-static fields start with a lowercase letter -->
-     <module name="MemberName">
+     <module name="LocalVariableName">
         <property name="format" value="^[a-z].*" />
         <property name="severity" value="warning" />
      </module>
