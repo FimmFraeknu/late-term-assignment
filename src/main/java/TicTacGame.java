@@ -38,7 +38,7 @@ public class TicTacGame implements SparkApplication {
 
       else {
          if (GameOver()) {
-            return GetWinner(); //Null if no winner
+            return GetWinner().toString(); //Null if no winner
          }
 
          else {
@@ -74,8 +74,131 @@ public class TicTacGame implements SparkApplication {
          public Object handle(Request request, Response response) {
             StringBuilder html = new StringBuilder();
             
-            html.append("<html lang=\"en\"><body>Hello World</body></html>");
+            html.append("<!DOCTYPE html>");
+	    html.append("<html lang=\"en\">");
+            html.append("<head>");
+   	    html.append("<meta charset=\"utf-8\">");
+   	    html.append("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
+   	    html.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+   	    html.append("<title>Tic Tac Toe</title>");
+            html.append("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.");
+            html.append("3.0/css/bootstrap.min.css\">");
+    	    html.append("<style>");
+     	    html.append("body {");
+       	    html.append("width: 70%;");
+       	    html.append("margin: 0 auto;");
+            html.append("}");
+     	    html.append("td {");
+       	    html.append("text-align: center;");
+      	    html.append("}");
+            html.append("</style>");
+            html.append("</head>");
+            html.append("<body>");
+            html.append("<p class=\"pull-left\" id=\"output\"></p>");
+            html.append("<a href=\"#\" class=\"btn btn-primary pull-left\" id=\"newmatch\">New Match</a>");
+            html.append("<table class=\"table table-bordered\">");
+            html.append("<tr>");
+            html.append("<td data-square=\"A1\"></td>");
+            html.append("<td data-square=\"A2\"></td>");
+            html.append("<td data-square=\"A3\"></td>");
+            html.append("</tr>");
+            html.append("<tr>");
+            html.append("<td data-square=\"B1\"></td>");
+            html.append("<td data-square=\"B2\"></td>");
+            html.append("<td data-square=\"B3\"></td>");
+            html.append("</tr>");
+            html.append("<tr>");
+            html.append("<td data-square=\"C1\"></td>");
+            html.append("<td data-square=\"C2\"></td>");
+            html.append("<td data-square=\"C3\"></td>");
+            html.append("</tr>");
+            html.append("</table>");
+            html.append("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.");
+            html.append("min.js\"></script>");
+            html.append("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap");
+            html.append(".min.js\"></script>");
+
+            html.append("<script>\n");
+            html.append("$(document).ready(function() {\n");
+            html.append("var currentPlayer = \"X\";\n");
+            html.append("$(\"td\").on(\"click\", function() {\n");
+            html.append("var square = $(this).data(\"square\");\n");
+            html.append("var squareTD = $(this);\n");
+            html.append("console.log(square);\n");
+            html.append("$.ajax({\n");
+            html.append("type: 'post',\n");
+            html.append("url: '/InsertMove',\n");
+            html.append("data: 'move=' + square,\n");
+            html.append("statusCode: {\n");
+            html.append("200: function (data) {\n");
+            html.append("//insert successful\n");
+            html.append("$(squareTD).html(currentPlayer);\n");
+            html.append("if (currentPlayer === \"X\") {\n");
+            html.append("currentPlayer = \"O\";\n");
+            html.append("}\n");
+            html.append("else {\n");
+            html.append("currentPlayer = \"X\";\n");
+            html.append("}\n");
+            html.append("},\n");
+            html.append("400: function(data) {\n");
+            html.append("//Insert unsuccessful\n");
+            html.append("}\n");
+            html.append("}\n");
+            html.append("}).done(function(winner) {\n");
+            html.append("if (winner !== null) {\n");
+            html.append("if (winner === \"X\") {\n");
+            html.append("$(\"#output\").html(\"Congratulations player X, you win!\");\n");
+            html.append("}\n");
+            html.append("else if (winner === \"O\") {\n");
+            html.append("$(\"#output\").html(\"Congratulations player O, you win!\");\n");
+            html.append("}\n");
+            html.append("}\n");
+            html.append("}).fail(function() {\n");
+            html.append("});\n");
+            html.append("event.preventDefault();\n");
+            html.append("});\n");
+
+            html.append("$(\"#newmatch\").on(\"click\", function() {\n");
+            html.append("$.each(\"td\", function(index, value) {\n");
+            html.append("$(value).html(\"\");\n");
+            html.append("});\n");
+            html.append("});\n");
+
+            html.append("});\n");
+            html.append("</script>");
+            html.append("</body>");
+            html.append("</html>");
             return html.toString();
+         }
+      });
+
+      post(new Route("/InsertMove") {
+         @Override
+         public Object handle(Request request, Response response) {
+            String move = request.queryParams("move");
+            SwitchLastPlayer();
+            int col = -1;
+            RowVal row = null;
+
+            row = RowVal.valueOf(String.valueOf(move.charAt(0)));
+            col = Character.getNumericValue(move.charAt(1));
+            
+            if (!board.Insert(row, col, lastPlayer)) {
+               SwitchLastPlayer(); //Allow the same player to play again
+               response.status(400);
+               return response; //Bad request
+            }
+
+            else {
+               if (GameOver()) {
+                  return GetWinner().toString(); //Null if no winner
+               }
+          
+               else {
+                  response.status(200);
+                  return response;
+               }
+            }
          }
       });
    }
