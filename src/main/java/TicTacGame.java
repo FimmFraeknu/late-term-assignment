@@ -42,7 +42,7 @@ public class TicTacGame {
 		   if (game.GameOver()) break;
 	   }
 	   
-	   //Athugum hver �st��an var fyrir GameOver.. draw e�a winner..
+	   // Check why we have GameOver, draw or winner.
 	   TicVal winner = game.GetWinner();
 	   if (winner == TicVal.X) {
 		   System.out.println("Congratulations PlayerX, you win!");

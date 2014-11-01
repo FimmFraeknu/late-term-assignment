@@ -11,9 +11,7 @@ public class HumanPlayer extends Player{
 	    @SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		
-	    //�egar vi� setjum inn � TicTacToe, getur veri� a� column s� out of bounds (checked)
-  		//E�a a� reitur s� fullur, ef fullur viljum vi� n�tt input
-  		//Athugum fyrst hvort row s� valid:
+	    // When we insert into TicTacToe, column can be out of bounds, full, or invalid
 	    String input = null; 
 	    
 	    while (true) {
@@ -44,7 +42,7 @@ public class HumanPlayer extends Player{
 				
 				if (!IsInvalidRow(input.charAt(0))) {
 					if (tacToe.Insert(row, col, symbol)) {
-						return; //Ef �etta var successful, viljum vi� h�tta, annars h�ldum vi� �fram a� bi�ja um input.
+						return; // If we are successful, we want to quite, else we continue asking for input.//
 					}
 					
 					else {
@@ -65,7 +63,7 @@ public class HumanPlayer extends Player{
 	
 	private boolean IsInvalidRow(char rowValue) {
 		for (RowVal row : RowVal.values()) {
-			if (row.toString().charAt(0) == rowValue) return false; //rowValue er � RowVal.. f�nt.
+			if (row.toString().charAt(0) == rowValue) return false; //rowValue is RowVal.
 		}
 		
 		return true; 
