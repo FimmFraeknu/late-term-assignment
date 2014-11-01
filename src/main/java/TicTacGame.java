@@ -23,7 +23,7 @@ public class TicTacGame {
 	   board.DisplayBoard();
    }
    
-   public static void Main(String[] args) {
+   public static void main(String[] args) {
 	   TicTacGame game = new TicTacGame();
 	   HumanPlayer playerX = new HumanPlayer(TicVal.X), playerO = new HumanPlayer(TicVal.O);
 	   System.out.println("---====Welcome to the thunderdome.====---");
