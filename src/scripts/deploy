@@ -1,0 +1,7 @@
+#!/bin/bash
+
+./gradlew clean
+./gradlew installApp
+
+cp -r build/install/late-term-assignment /tmp/ragnara13
+/tmp/ragnara13/late-term-assignment/bin/late-term-assignment
