@@ -13,6 +13,9 @@ apply plugin: 'application'
 
 // Apply the checkstyle plugin
 
+// Apply the JaCoCo plugin
+apply plugin: 'jacoco'
+
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use 'jcenter' for resolving your dependencies.
@@ -40,4 +43,14 @@ jar {
 
 startScripts {
     mainClassName = "main.java.TicTacGame"
+}
+
+jacoco {
+    toolVersion = "0.7.2.201409121644"
+    reportsDir = file("$buildDir/reports/jacocoReports")
+}
+
+jacocoTestReport {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports after running tests"
 }
