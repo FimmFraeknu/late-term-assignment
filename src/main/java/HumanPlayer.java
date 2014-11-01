@@ -6,7 +6,7 @@ public class HumanPlayer extends Player{
 	HumanPlayer(TicVal symbol) {
 		super(symbol);
 	}
-	public void getMove(TicTacToe tacToe) {
+	public void GetMove(TicTacToe tacToe) {
 		System.out.println("Player " + symbol + " choose your square. (Format examples: A1, B2, C3..)");
 	    @SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);

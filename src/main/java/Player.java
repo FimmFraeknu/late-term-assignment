@@ -7,5 +7,5 @@ public abstract class Player {
 		this.symbol = symbol; 
 	}
 	
-	public abstract void getMove(TicTacToe tacToe);
+	public abstract void GetMove(TicTacToe tacToe);
 }
