@@ -148,14 +148,15 @@ public class TicTacGame implements SparkApplication {
             html.append("}\n");
             html.append("}\n");
             html.append("}).done(function(winner) {\n");
-            html.append("if (winner !== null) {\n");
             html.append("if (winner === \"X\") {\n");
             html.append("$(\"#output\").html(\"Congratulations player X, you win!\");\n");
             html.append("}\n");
             html.append("else if (winner === \"O\") {\n");
             html.append("$(\"#output\").html(\"Congratulations player O, you win!\");\n");
             html.append("}\n");
-            html.append("}\n");
+	    html.append("else if (winner === \"U\") {\n");
+	    html.append("$(\"#output\").html(\"Draw\");\n");
+	    html.append("}\n");
             html.append("}).fail(function() {\n");
             html.append("});\n");
             html.append("event.preventDefault();\n");
@@ -194,6 +195,10 @@ public class TicTacGame implements SparkApplication {
 
             else {
                if (GameOver()) {
+		  TicVal winner = GetWinner();
+		  if(winner == null) {
+		     return "U";
+		  }
                   return GetWinner().toString(); //Null if no winner
                }
           
