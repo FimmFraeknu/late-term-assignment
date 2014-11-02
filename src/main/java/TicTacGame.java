@@ -72,6 +72,9 @@ public class TicTacGame implements SparkApplication {
       get(new Route("/") {
          @Override
          public Object handle(Request request, Response response) {
+            board = new TicTacToe(); //Refresh board on refresh..
+            lastPlayer = TicVal.U; 
+
             StringBuilder html = new StringBuilder();
             
             html.append("<!DOCTYPE html>");
