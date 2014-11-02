@@ -41,10 +41,10 @@ dependencies {
     testCompile 'junit:junit:4.11'
 
     seleniumCompile 'junit:junit:4.11'
-    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.+'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.40.0'
 
     seleniumXvfbCompile 'junit:junit:4.11' 
-    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.+' 
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.40.0' 
 
 }
 

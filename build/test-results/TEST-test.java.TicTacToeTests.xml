@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.TicTacToeTests" tests="15" skipped="0" failures="0" errors="0" timestamp="2014-11-02T18:07:15" hostname="church" time="0.118">
+<testsuite name="test.java.TicTacToeTests" tests="15" skipped="0" failures="0" errors="0" timestamp="2014-11-02T19:09:35" hostname="i-4ed56688" time="0.155">
   <properties/>
-  <testcase name="ColumnOutOfBoundsTest" classname="test.java.TicTacToeTests" time="0.078"/>
-  <testcase name="GetHorizontalWinnerTest" classname="test.java.TicTacToeTests" time="0.001"/>
+  <testcase name="ColumnOutOfBoundsTest" classname="test.java.TicTacToeTests" time="0.11"/>
+  <testcase name="GetHorizontalWinnerTest" classname="test.java.TicTacToeTests" time="0.011"/>
   <testcase name="GetVerticalWinnerTest" classname="test.java.TicTacToeTests" time="0.001"/>
-  <testcase name="CheckVerticalLoserTest" classname="test.java.TicTacToeTests" time="0.002"/>
-  <testcase name="InsertTest" classname="test.java.TicTacToeTests" time="0.001"/>
-  <testcase name="InsertIntoTakenSquare" classname="test.java.TicTacToeTests" time="0.001"/>
+  <testcase name="CheckVerticalLoserTest" classname="test.java.TicTacToeTests" time="0.001"/>
+  <testcase name="InsertTest" classname="test.java.TicTacToeTests" time="0.0"/>
+  <testcase name="InsertIntoTakenSquare" classname="test.java.TicTacToeTests" time="0.0"/>
   <testcase name="CheckDiagonalLoserTest" classname="test.java.TicTacToeTests" time="0.001"/>
-  <testcase name="CheckVerticalMiddleLineV2" classname="test.java.TicTacToeTests" time="0.0"/>
+  <testcase name="CheckVerticalMiddleLineV2" classname="test.java.TicTacToeTests" time="0.001"/>
   <testcase name="CheckMultipleRowsLoserTest" classname="test.java.TicTacToeTests" time="0.0"/>
-  <testcase name="GetDiagonalWinnerTest" classname="test.java.TicTacToeTests" time="0.001"/>
+  <testcase name="GetDiagonalWinnerTest" classname="test.java.TicTacToeTests" time="0.009"/>
   <testcase name="GetLoserTest" classname="test.java.TicTacToeTests" time="0.001"/>
   <testcase name="CheckHorizontalLoserTest" classname="test.java.TicTacToeTests" time="0.001"/>
-  <testcase name="BoardFullTest" classname="test.java.TicTacToeTests" time="0.001"/>
-  <testcase name="ConstructorTest" classname="test.java.TicTacToeTests" time="0.002"/>
+  <testcase name="BoardFullTest" classname="test.java.TicTacToeTests" time="0.0"/>
+  <testcase name="ConstructorTest" classname="test.java.TicTacToeTests" time="0.0"/>
   <testcase name="CheckVerticalMiddleLine" classname="test.java.TicTacToeTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
