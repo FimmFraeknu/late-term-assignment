@@ -1,26 +1,25 @@
 #/bin/bash
 # Generate javadocs and push to Github's gh-pages branch
 
+# Generate a new javadoc set.
 ./gradlew clean
 ./gradlew javadoc
 
-git branch -d gh-pages
-git branch gh-pages
-git checkout gh-pages
+# Create temporary clone of github project
+mkdir /tmp/late-term-pages/
+git clone https://github.com/antonva/late-term-assignment /tmp/late-term-pages/
 
-mv build/doc/javadoc ./
-rm -rf build/
-rm -rf config/
-rm -rf bin/
-rm -rf gradle/
-rm -rf src/
-rm -rf .gradle
-rm .project
-rm .classpath
-rm *
-mv javadoc/* ./
-rm -rf javadoc
-git add build/docs/*
+# Store pwd
+PWD=$(pwd)
+# Move javadoc to temp folder
+cd /tmp/late-term-pages/
+git checkout gh-pages
+cd $PWD
+mv build/doc/javadoc/* /tmp/late-term-pages/
+cd /tmp/late-term-pages/
+
+git add .
 git commit -m "Built javadoc for github for build on $(date)"
 git push origin gh-pages 
-git checkout development
+cd $PWD 
+rm -rf /tmp/late-term-pages/
