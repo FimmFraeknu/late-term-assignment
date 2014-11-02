@@ -7,7 +7,7 @@ before_install:
         - "sh -e /etc/init.d/xvfb start"
 script:
         - ./gradlew check
-        - ./gradlew seleniumXvfb
+        - ./gradlew test
 deploy:
         provider: heroku
         api_key:
