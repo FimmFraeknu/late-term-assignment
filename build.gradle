@@ -22,17 +22,30 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
-
+/*
+ *sourceSets {
+ *  selenium
+ *  seleniumXvfb
+ *}
+ */
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.5'
     compile 'com.sparkjava:spark-core:1.1.1'
+
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.11'
+
+    //seleniumCompile 'junit:junit:4.11'
+    //seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.40.0'
+
+    //seleniumXvfbCompile 'junit:junit:4.11' 
+    //seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.40.0' 
+
 }
 
 mainClassName = "main.java.TicTacGame"
@@ -56,5 +69,20 @@ jacocoTestReport {
     group = "Reporting"
     description = "Generate Jacoco coverage reports after running tests"
 }
-
+/*
+ *task seleniumXvfb(type: Test, dependsOn: installApp) {                                                                                                                                                 
+ *   testClassesDir = sourceSets.selenium.output.classesDir
+ *   classpath = sourceSets.selenium.runtimeClasspath
+ 
+ 
+ *   environment "DISPLAY", ":99"
+ *   doFirst {
+ *       '/usr/bin/Xvfb start'.execute()
+ *       'build/install/late-term-assignment/bin/late-term-assignment &'.execute()
+ *   }
+ *   doLast {
+ *       '/usr/bin/Xvfb stop'.execute()
+ *   }
+ *}
+ */
 task stage { dependsOn installApp }
