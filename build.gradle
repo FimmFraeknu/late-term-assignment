@@ -56,3 +56,5 @@ jacocoTestReport {
     group = "Reporting"
     description = "Generate Jacoco coverage reports after running tests"
 }
+
+task stage { dependsOn installApp }
