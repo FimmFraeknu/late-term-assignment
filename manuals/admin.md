@@ -15,4 +15,6 @@ sh src/scripts/deploy
 
 ## How to deploy, run and maintain in case of client/server or web application.
 
-> TODO: Write...
+> Here is a step by step tutorial on how to set up a web application using heroku.
+
+> https://devcenter.heroku.com/start
