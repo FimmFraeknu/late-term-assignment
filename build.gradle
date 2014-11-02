@@ -33,6 +33,10 @@ dependencies {
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.11'
+
+    seleniumXvfbCompile 'junit:junit:4.11' 
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.39.0' 
+
 }
 
 mainClassName = "main.java.TicTacGame"
@@ -57,4 +61,14 @@ jacocoTestReport {
     description = "Generate Jacoco coverage reports after running tests"
 }
 
+task seleniumXvfb(type: Test, dependsOn: installApp) {                                                                                                                                                 
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+ 
+ 
+    doFirst {
+        'build/install/sparkIt/bin/sparkIt &'.execute()
+    }   
+    
+}
 task stage { dependsOn installApp }
