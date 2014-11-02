@@ -1,8 +1,5 @@
 # Developer Manual
 
-## Requirements
-> Java Development Kit 7
-
 ## Coding rules
 > Make sure methods start with a capital letter.
 
@@ -31,3 +28,12 @@ sh src/scripts/gen_docs
 ```
 
 > This will generate a local javadoc.
+
+## Source control client and access to source control
+> Git and GitHub
+
+## Build environment
+> GreenQloud
+
+## Other necessary dependencies
+> Java Development Kit 7
