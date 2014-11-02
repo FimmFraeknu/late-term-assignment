@@ -13,4 +13,7 @@ deploy:
                 secure: 00766a0f-7b19-4a7a-9f7e-ce4b5bf2a328
         app:
                 master: tic-taco
+<<<<<<< HEAD
+=======
                 development: tic-taco-staging
+>>>>>>> development
