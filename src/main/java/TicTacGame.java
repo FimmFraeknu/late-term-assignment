@@ -98,7 +98,6 @@ public class TicTacGame implements SparkApplication {
             html.append("</head>");
             html.append("<body>");
             html.append("<p class=\"pull-left\" id=\"output\"></p>");
-            html.append("<a href=\"#\" class=\"btn btn-primary pull-left\" id=\"newmatch\">New Match</a>");
             html.append("<table class=\"table table-bordered\">");
             html.append("<tr>");
             html.append("<td data-square=\"A1\"></td>");
@@ -145,9 +144,11 @@ public class TicTacGame implements SparkApplication {
             html.append("},\n");
             html.append("400: function(data) {\n");
             html.append("//Insert unsuccessful\n");
+            html.append("$(\"#output\").html(\"Invalid move.\");");
             html.append("}\n");
             html.append("}\n");
             html.append("}).done(function(winner) {\n");
+            html.append("$(\"#output\").html(\"\");");
             html.append("if (winner === \"X\") {\n");
             html.append("$(\"#output\").html(\"Congratulations player X, you win!\");\n");
             html.append("}\n");
