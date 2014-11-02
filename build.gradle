@@ -22,12 +22,12 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
-
-sourceSets {
-   selenium
-   seleniumXvfb
-}
-
+/*
+ *sourceSets {
+ *  selenium
+ *  seleniumXvfb
+ *}
+ */
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // The production code uses the SLF4J logging API at compile time
@@ -40,11 +40,11 @@ dependencies {
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.11'
 
-    seleniumCompile 'junit:junit:4.11'
-    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.40.0'
+    //seleniumCompile 'junit:junit:4.11'
+    //seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.40.0'
 
-    seleniumXvfbCompile 'junit:junit:4.11' 
-    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.40.0' 
+    //seleniumXvfbCompile 'junit:junit:4.11' 
+    //seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.40.0' 
 
 }
 
@@ -69,19 +69,20 @@ jacocoTestReport {
     group = "Reporting"
     description = "Generate Jacoco coverage reports after running tests"
 }
-
-task seleniumXvfb(type: Test, dependsOn: installApp) {                                                                                                                                                 
-    testClassesDir = sourceSets.selenium.output.classesDir
-    classpath = sourceSets.selenium.runtimeClasspath
+/*
+ *task seleniumXvfb(type: Test, dependsOn: installApp) {                                                                                                                                                 
+ *   testClassesDir = sourceSets.selenium.output.classesDir
+ *   classpath = sourceSets.selenium.runtimeClasspath
  
  
-    environment "DISPLAY", ":99"
-    doFirst {
-        '/usr/bin/Xvfb start'.execute()
-        'build/install/late-term-assignment/bin/late-term-assignment &'.execute()
-    }
-    doLast {
-        '/usr/bin/Xvfb stop'.execute()
-    }
-}
+ *   environment "DISPLAY", ":99"
+ *   doFirst {
+ *       '/usr/bin/Xvfb start'.execute()
+ *       'build/install/late-term-assignment/bin/late-term-assignment &'.execute()
+ *   }
+ *   doLast {
+ *       '/usr/bin/Xvfb stop'.execute()
+ *   }
+ *}
+ */
 task stage { dependsOn installApp }
