@@ -83,7 +83,7 @@ public class TicTacGame implements SparkApplication {
    	    html.append("<meta charset=\"utf-8\">");
    	    html.append("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
    	    html.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
-   	    html.append("<title>Tic Tac Test</title>");
+   	    html.append("<title>Tic Tac Toe</title>");
             html.append("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.");
             html.append("3.0/css/bootstrap.min.css\">");
     	    html.append("<style>");
