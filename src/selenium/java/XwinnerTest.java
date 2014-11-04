@@ -11,22 +11,25 @@ import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 import static org.apache.commons.lang3.StringUtils.join;
 
-public class InvalidInputTest {
+public class XwinnerTest {
 	private Selenium selenium;
 
 	@Before
 	public void setUp() throws Exception {
 		WebDriver driver = new FirefoxDriver();
-		String baseUrl = "http://46.149.26.108:4567/";
+		String baseUrl = "http://tic-taco.herokuapp.com/";
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
 	}
 
 	@Test
-	public void testInvalidInput() throws Exception {
+	public void testXwinner() throws Exception {
 		selenium.refresh();
+		selenium.clickAt("//td[2]", "");
+		selenium.clickAt("//td[3]", "");
 		selenium.clickAt("//tr[2]/td[2]", "");
-		selenium.clickAt("//tr[2]/td[2]", "");
-		verifyEquals("Invalid move.", selenium.getText("id=output"));
+		selenium.clickAt("//tr[2]/td[3]", "");
+		selenium.clickAt("//tr[3]/td[2]", "");
+		assertEquals("Congratulations player X, you win!", selenium.getText("id=output"));
 	}
 
 	@After
