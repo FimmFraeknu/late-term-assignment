@@ -80,6 +80,7 @@ public class TicTacGame implements SparkApplication {
             html.append("<!DOCTYPE html>");
 	    html.append("<html lang=\"en\">");
             html.append("<head>");
+	    html.append("<!-- test -->");
    	    html.append("<meta charset=\"utf-8\">");
    	    html.append("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
    	    html.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
